@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 8018577524396424842}
   - component: {fileID: 7532226858520197529}
   - component: {fileID: 5258956271439284558}
-  - component: {fileID: 5455959723182698916}
-  - component: {fileID: 3097499866751286112}
-  - component: {fileID: 2921347459839073203}
   - component: {fileID: -4228849659732012262}
+  - component: {fileID: 7280896201863388317}
+  - component: {fileID: 1255150611570699647}
+  - component: {fileID: 8427752141026173916}
   m_Layer: 0
   m_Name: Base
   m_TagString: Untagged
@@ -37,7 +37,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6343185844156921781
 MeshFilter:
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f489afeb8f503344dae958a66cb8a347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5455959723182698916
+--- !u!114 &-4228849659732012262
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,10 +131,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8470240471661064798}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e4ed084a583ef64fbd5445cd9753c19, type: 3}
+  m_Script: {fileID: 11500000, guid: 898e093103f1576489f05ada957038b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3097499866751286112
+--- !u!114 &7280896201863388317
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _harvesterPrefab: {fileID: 8172454362445391973, guid: 7f21c2cdd9a7de74ea1f960d3f0471b4, type: 3}
---- !u!114 &2921347459839073203
+--- !u!114 &1255150611570699647
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,12 +156,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8470240471661064798}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35475be6b7c3ecb46b065083c9cfe4a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 002124fc7415ffb4a8ed6af0fb01d3c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _basePrefab: {fileID: 3186196164003951639}
-  _stateA: {fileID: 3097499866751286112}
---- !u!114 &-4228849659732012262
+  _harvesterCreatingState: {fileID: 7280896201863388317}
+--- !u!114 &8427752141026173916
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,6 +170,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8470240471661064798}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 898e093103f1576489f05ada957038b7, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e4ed084a583ef64fbd5445cd9753c19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

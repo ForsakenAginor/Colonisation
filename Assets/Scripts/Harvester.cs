@@ -7,7 +7,7 @@ public class Harvester : MonoBehaviour
     private Transform _target;
     private Animator _animator;
     private bool _isReturning;
-    private float _speed = 3;
+    private float _speed = 10;
 
     public bool IsBusy { get; private set; }
 
