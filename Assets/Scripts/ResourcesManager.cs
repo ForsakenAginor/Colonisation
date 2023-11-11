@@ -1,58 +1,71 @@
 using System.Linq;
 using UnityEngine;
+using System.Collections.Generic;
 
-[RequireComponent(typeof(HarvestManager))]
+[RequireComponent(typeof(HarvesterCreatingState))]
+[RequireComponent (typeof(NewBaseCreatingState))]
 public class ResourcesManager : MonoBehaviour
 {
-    private HarvestManager _harvestManager;
-    private Harvester[] _harvesters;
-    private Spawner _spawner;
-    private int _resourceCount;
-    private int _initialHarvestersQuantity = 3;
+    private List<Harvester> _harvesters;
+    private int _resourcesAmount;
 
-    public State State { get; set; }
+    public IResourceSpenderState State { get; set; }
 
-    public Harvester[] GetAvailableHarvesters()
+    public List<Harvester> GetAvailableHarvesters()
     {
-        Harvester[] harvesters = new Harvester[_harvesters.Length];
+        return new List<Harvester>(_harvesters);
+    }
 
-        for (int i = 0; i <_harvesters.Length; i++)
+    public void AddHarvester(Harvester harvester)
+    {
+        if (_harvesters == null)
         {
-            harvesters[i] = _harvesters[i];
+            _harvesters = new List<Harvester>();
         }
 
-        return harvesters;
+        _harvesters.Add(harvester);
+    }
+
+    public bool TryGetHarvester(out Harvester harvester)
+    {
+        if (_harvesters != null && _harvesters.Count > 0)
+        {
+            harvester = _harvesters[0];
+            _harvesters.RemoveAt(0);
+            return true;
+        }
+        else
+        {   
+            harvester = null;
+            return false;
+        }
     }
 
     public void AddResource()
     {
-        _resourceCount++;
+        _resourcesAmount++;
+    }
+
+    public bool TrySpendResources(int amount)
+    {
+        if (amount <= _resourcesAmount)
+        {
+            _resourcesAmount -= amount;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     private void Awake()
     {
-        _spawner = GetComponent<Spawner>();
-        _harvestManager = GetComponent<HarvestManager>();
-        _harvesters = _spawner.Spawn(_initialHarvestersQuantity).Select(harvester => harvester.GetComponent<Harvester>()).ToArray();
-
-        foreach (Harvester harvester in _harvesters)
-            harvester.SetStorage(_harvestManager);
+        State = GetComponent<HarvesterCreatingState>();
     }
 
     private void Update()
     {
-        SpawnAdditionalHarvester();
-    }
-
-    private void SpawnAdditionalHarvester()
-    {
-        int spawnCost = 3;
-
-        if (_resourceCount >= spawnCost)
-        {
-            _harvesters = _harvesters.Union(_spawner.Spawn(1).Select(harvester => harvester.GetComponent<Harvester>())).ToArray();
-            _harvesters[_harvesters.Length - 1].SetStorage(_harvestManager);
-            _resourceCount -= spawnCost;
-        }
+        State.SpendResources();
     }
 }

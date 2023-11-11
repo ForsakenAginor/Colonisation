@@ -1,10 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
-[RequireComponent(typeof(Spawner))]
-[RequireComponent (typeof(ResourcesManager))]
 public class HarvestManager : MonoBehaviour
 {
     private ResourcesManager _workerManager;
@@ -32,6 +29,9 @@ public class HarvestManager : MonoBehaviour
 
     private void FindResourcesForHarvest()
     {
-        _harvestableResources = FindObjectsByType<Resource>(FindObjectsSortMode.None).Where(resource => resource.IsMarkedForHarvest == false).ToList();
+        _harvestableResources = FindObjectsByType<Resource>(FindObjectsSortMode.None).
+            Where(resource => resource.IsMarkedForHarvest == false).
+            OrderBy(resource => (resource.transform.position - transform.position).magnitude).
+            ToList();
     }
 }
