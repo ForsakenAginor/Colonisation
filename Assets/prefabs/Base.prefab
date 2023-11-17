@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -4228849659732012262}
   - component: {fileID: 7280896201863388317}
   - component: {fileID: 1255150611570699647}
-  - component: {fileID: 8427752141026173916}
+  - component: {fileID: -7865862408999769793}
   m_Layer: 0
   m_Name: Base
   m_TagString: Untagged
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9aaa5d1899eaf4a9a01b1753b6fc6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _harvesterPrefab: {fileID: 8172454362445391973, guid: 7f21c2cdd9a7de74ea1f960d3f0471b4, type: 3}
+  _harvesterPrefab: {fileID: 1236862898220988686, guid: 7f21c2cdd9a7de74ea1f960d3f0471b4, type: 3}
 --- !u!114 &1255150611570699647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,9 +159,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 002124fc7415ffb4a8ed6af0fb01d3c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _basePrefab: {fileID: 3186196164003951639}
+  _markPrefab: {fileID: 1320120912037791264, guid: 193dabaa88d17af4fa850f2fe4c9b706, type: 3}
   _harvesterCreatingState: {fileID: 7280896201863388317}
---- !u!114 &8427752141026173916
+--- !u!114 &-7865862408999769793
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,6 +170,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8470240471661064798}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e4ed084a583ef64fbd5445cd9753c19, type: 3}
+  m_Script: {fileID: 11500000, guid: 66c40eefd05c6f54eb4b32b454cbaf9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

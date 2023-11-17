@@ -652,6 +652,8 @@ GameObject:
   - component: {fileID: 3536246740166204243}
   - component: {fileID: 7612025079431848565}
   - component: {fileID: 8172454362445391973}
+  - component: {fileID: 1236862898220988686}
+  - component: {fileID: 8496830300408504453}
   - component: {fileID: 9152137557027131366}
   m_Layer: 0
   m_Name: Ant
@@ -708,7 +710,7 @@ Animator:
   m_GameObject: {fileID: 4894265896513016615}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: c76e1dd902d7cfe488a45d500f98d871, type: 3}
-  m_Controller: {fileID: 9100000, guid: b75acd26a190b9148a2d5eb41baa1fe5, type: 2}
+  m_Controller: {fileID: 9100000, guid: bf79c77ec528111409b4a3cba8b76e56, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -731,7 +733,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 712f911542bd2854cbc586a3b87d5bc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _storage: {fileID: 0}
+--- !u!114 &1236862898220988686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4894265896513016615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b265cc0b0b8a2f54d9e0538b2aac016d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 50
+--- !u!114 &8496830300408504453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4894265896513016615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01a3f2089d3ad4f4da5032ddfefca302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 20
+  _basePrefab: {fileID: 5258956271439284558, guid: 519a7f8180f2417428860a1e84367db3, type: 3}
 --- !u!54 &9152137557027131366
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ public class Resource : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent<ResourcesManager>(out ResourcesManager storage))
+        if (other.TryGetComponent<ResourcesStorage>(out ResourcesStorage storage))
         { 
             Destroy(transform.gameObject);
             storage.AddResource();

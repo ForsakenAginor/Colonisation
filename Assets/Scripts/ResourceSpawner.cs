@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ResourceSpawner : Spawner
 {
-    [SerializeField] private int _amount;
+    [SerializeField] private int _starterResources;
+    [SerializeField] private UnityEvent _spawned;
 
     private float _spawnFrequency = 5;
 
     private void Start()
     {
-        Spawn(_amount);
+        Spawn(_starterResources);
         StartCoroutine(SpawnResources());
     }
 
@@ -24,6 +26,7 @@ public class ResourceSpawner : Spawner
         {
             spawnDelay = new WaitForSeconds(_spawnFrequency);
             Spawn(resourcesAmount);
+            _spawned?.Invoke();
 
             yield return spawnDelay;
         }

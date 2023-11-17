@@ -8,8 +8,10 @@ public class TerrainClickHandler : MonoBehaviour, IPointerClickHandler
 {
     public void OnPointerClick(PointerEventData eventData)
     {
-        BaseClickHandler selectedBase = FindObjectsByType<BaseClickHandler>(FindObjectsSortMode.None).Where(handler => handler.IsSelected == true).First();
-        var hz = selectedBase.GetComponent<NewBaseCreatingState>();
-        hz.SetBuildingPosition(eventData.pointerCurrentRaycast.worldPosition);
+        BaseClickHandler selectedBase = FindObjectsByType<BaseClickHandler>(FindObjectsSortMode.None).
+            Where(handler => handler.IsSelected == true).
+            First();
+
+        selectedBase.GetComponent<NewBaseCreatingState>().SetBuildingPosition(eventData.pointerCurrentRaycast.worldPosition);
     }
 }
